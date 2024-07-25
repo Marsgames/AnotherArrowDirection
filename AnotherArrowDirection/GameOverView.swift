@@ -73,17 +73,32 @@ struct GameOverView: View {
         //////////////////////////////////////////
 
         // Add the current score
-        self.bestScores = [self.actualScore]
-
-        // From previous scores, add the bests ones up to 10 elements and do not add the current score
-        for score in self.previousScores {
-            if self.bestScores.count < 5 && score.score != self.scoreAmount {
-                self.bestScores.append(score)
-            }
-        }
+        self.bestScores = previousScores
 
         // Sort best scores by score
         self.bestScores = self.bestScores.sorted(by: { $0.score > $1.score })
+
+        // Keep 5 best scores
+        if self.bestScores.count > 5 {
+            self.bestScores.removeLast(self.bestScores.count - 5)
+        }
+
+        if !self.bestScores.contains(actualScore)
+        {
+            self.bestScores.append(actualScore)
+            self.bestScores = self.bestScores.sorted(by: { $0.score > $1.score })
+
+            // Remove the last one except if it's the actual score
+            if self.bestScores.count > 5 {
+                self.bestScores.removeLast()
+            }
+
+            if !self.bestScores.contains(actualScore)
+            {
+                self.bestScores.removeLast()
+                self.bestScores.append(actualScore)
+            }
+        }
 
         UserDefaults.standard.setValue(self.bestScores.first?.score ?? 0, forKey: "bestScore")
 
