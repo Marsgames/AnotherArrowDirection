@@ -19,6 +19,9 @@ struct AnotherArrowDirectionApp: App {
             case .Tutorial:
                 Tutorial()
                 
+            case .Game:
+                GameView()
+                
             default:
                 EmptyView()
             

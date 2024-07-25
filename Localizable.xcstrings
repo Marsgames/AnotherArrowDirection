@@ -1,11 +1,40 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Another" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autre direction"
+          }
+        }
+      }
+    },
     "Another Arrow Direction" : {
 
     },
     "Best score: %lld" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meilleur score : %lld"
+          }
+        }
+      }
+    },
+    "Do nothing" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ne rien faire"
+          }
+        }
+      }
     },
     "do nothing!" : {
       "localizations" : {
@@ -49,6 +78,17 @@
         }
       }
     },
+    "Opposite" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Direction opposée"
+          }
+        }
+      }
+    },
     "Play" : {
       "localizations" : {
         "fr" : {
@@ -66,6 +106,27 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "rouge"
+          }
+        }
+      }
+    },
+    "Same" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Même direction"
+          }
+        }
+      }
+    },
+    "Score: %lld" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Score : %lld"
           }
         }
       }

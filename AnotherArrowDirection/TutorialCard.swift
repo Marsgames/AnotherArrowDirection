@@ -11,11 +11,9 @@ struct TutorialCard: View
 {
     @Binding var actionValidated: Bool
 
-    var color: Color
-    var colorName: String
-
-    var message: String
-    var swipeDirection: ESwipeDirection
+    let message: String
+    let swipeDirection: ESwipeDirection
+    let colorName: String
 
     @State private var valueTranslation: CGSize = .zero
     @State private var isDragging = false
@@ -35,7 +33,7 @@ struct TutorialCard: View
             {
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
-                    .fill(color)
+                    .fill(swipeDirection.color)
                     .blur(radius: 3)
                     .frame(height: 150)
                     .padding(.horizontal)
@@ -175,7 +173,7 @@ struct TutorialCard: View
     {
         Background()
 
-        TutorialCard(actionValidated: $completed, color: .green, colorName: "green", message: "swipe in the direction of the arrow", swipeDirection: .Same)
+        TutorialCard(actionValidated: $completed, message: "swipe in the direction of the arrow", swipeDirection: .Same, colorName: String(localized: "green"))
             .preferredColorScheme(.dark)
     }
 }
@@ -188,6 +186,6 @@ struct TutorialCard: View
     {
         Background()
 
-        TutorialCard(actionValidated: $completed, color: .green, colorName: "green", message: "swipe in the direction of the arrow", swipeDirection: .Same)
+        TutorialCard(actionValidated: $completed, message: "swipe in the direction of the arrow", swipeDirection: .Same, colorName: String(localized: "green"))
     }
 }

@@ -72,6 +72,7 @@ struct Home: View {
                         Capsule()
                             .stroke(style: StrokeStyle(lineWidth: 2))
                     }
+                    .accentColor(.green)
                 }
                 .padding()
             }

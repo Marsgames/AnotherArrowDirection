@@ -19,19 +19,19 @@ struct Tutorial: View {
             VStack {
                 Spacer(minLength: 0)
                 
-                TutorialCard(actionValidated: $completed[0], color: .green, colorName: String(localized: "green"), message: String(localized: "swipe in the direction of the arrow"), swipeDirection: .Same)
+                TutorialCard(actionValidated: $completed[0], message: String(localized: "swipe in the direction of the arrow"), swipeDirection: .Same, colorName: String(localized: "green"))
                 
                 Spacer(minLength: 0)
                 
-                TutorialCard(actionValidated: $completed[1], color: .yellow, colorName: String(localized: "yellow"), message: String(localized: "swipe in the opposite direction"), swipeDirection: .Opposite)
+                TutorialCard(actionValidated: $completed[1], message: String(localized: "swipe in the opposite direction"), swipeDirection: .Opposite, colorName: String(localized: "yellow"))
                 
                 Spacer(minLength: 0)
                 
-                TutorialCard(actionValidated: $completed[2], color: .red, colorName: String(localized: "red"), message: String(localized: "swipe in a direction that is not the same or the opposite"), swipeDirection: .Another)
+                TutorialCard(actionValidated: $completed[2], message: String(localized: "swipe in a direction that is not the same or the opposite"), swipeDirection: .Another, colorName: String(localized: "red"))
                 
                 Spacer(minLength: 0)
                 
-                TutorialCard(actionValidated: $completed[3], color: .gray, colorName: String(localized: "gray"), message: String(localized: "do nothing!"), swipeDirection: .None)
+                TutorialCard(actionValidated: $completed[3], message: String(localized: "do nothing!"), swipeDirection: .None, colorName: String(localized: "gray"))
                 
                 Spacer(minLength: 0)
             }
