@@ -2,10 +2,24 @@
   "sourceLanguage" : "en",
   "strings" : {
     " - " : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-"
+          }
+        }
+      }
     },
     "%lld" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
     },
     "Another" : {
       "extractionState" : "manual",
@@ -19,7 +33,14 @@
       }
     },
     "Another Arrow Direction" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Another Arrow Direction"
+          }
+        }
+      }
     },
     "Best score: %lld" : {
       "localizations" : {
