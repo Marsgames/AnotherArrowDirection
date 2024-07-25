@@ -11,5 +11,5 @@ import Foundation
 final class AppManager {
     static var shared = AppManager()
 
-    var currentScreen = EScreen.Home
+    var currentScreen = EScreen.SplashScreen
 }

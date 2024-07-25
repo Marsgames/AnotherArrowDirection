@@ -24,8 +24,8 @@ struct AnotherArrowDirectionApp: App {
             case .EndGame(score: let score):
                 GameOverView(score: score)
                 
-            default:
-                EmptyView()
+            case .SplashScreen:
+                SplashScreen()
             }
         }
     }
