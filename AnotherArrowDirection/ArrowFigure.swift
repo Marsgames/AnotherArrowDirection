@@ -28,7 +28,7 @@ struct ArrowFigure: View {
                 elapsedTime += 0.01
                 model.currentOffset = model.originalOffset + elapsedTime * speed
                 if abs(model.currentOffset) < 10 && model.swipeDirection == .None {
-                    DispatchQueue.main.asyncAfter(deadline: .now())
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.001)
                     {
                         addScoreAction()
                     }
