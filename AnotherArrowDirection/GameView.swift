@@ -9,15 +9,19 @@ import SwiftUI
 
 struct GameView: View
 {
-    @State private var xRotation = -2.5
+    // Scoring
     private var initialLives = 3
     @State private var lives = 3
     @State private var score = 0
-    @State private var upscale = false
-    @State private var speed = 50.0
 
+    // Animations
+    @State private var xRotation = -5.5
+    @State private var upscale = false
+
+    // Difficulty / game loop
     @State private var timer = Timer.publish(every: 0.01, on: .main, in: .common).autoconnect()
     @State private var elapsedTime = 0.0
+    @State private var speed = 50.0
     @State private var lastArrowGenerationTime = 0.0
     @State private var arrowGenerationInterval = 3.0
     
@@ -49,23 +53,26 @@ struct GameView: View
             
             VStack
             {
-                // Top data
                 HStack
                 {
-                    ForEach(0..<lives, id: \.self)
-                    { _ in
-                        Image(systemName: "heart.fill")
-                            .foregroundColor(.red)
-                            .shadow(color: .red, radius: 2)
-                    }
-                    
-                    if lives <= initialLives
+                    // TODO: Redo with a Bool array
+                    Group
                     {
-                        ForEach(0..<initialLives - lives, id: \.self)
+                        ForEach(0..<lives, id: \.self)
                         { _ in
-                            Image(systemName: "heart")
-                                .foregroundColor(.gray)
-                                .shadow(color: .gray, radius: 2)
+                            Image(systemName: "heart.fill")
+                                .foregroundColor(.red)
+                                .shadow(color: .red, radius: 2)
+                        }
+                        
+                        if lives <= initialLives
+                        {
+                            ForEach(0..<initialLives - lives, id: \.self)
+                            { _ in
+                                Image(systemName: "heart")
+                                    .foregroundColor(.gray)
+                                    .shadow(color: .gray, radius: 2)
+                            }
                         }
                     }
                     
@@ -75,8 +82,13 @@ struct GameView: View
                 }
                 .padding()
                 
-                Spacer()
+                Spacer(minLength: 0)
                 
+                // TODO: Add "Good", "Perfect"... + animation depending on score added
+                
+                Spacer(minLength: 0)
+                
+                // Hide help over 3k score
                 if let arrow = arrows.first,
                    score < 3000
                 {
@@ -113,16 +125,27 @@ struct GameView: View
         .gesture(DragGesture()
             .onEnded
             { value in
+                // If there is no arrows (between spawn)
                 guard let arrow = arrows.first
                 else
                 {
                     loseOneLife()
                     return
                 }
+            
+                // If user swipe before an arrow reach the bubble
                 guard abs(arrow.currentOffset) <= 90
                 else
                 {
                     loseOneLife(removeArrow: false)
+                    return
+                }
+            
+                // If user swipe when direction is .None
+                guard arrow.swipeDirection != .None
+                else
+                {
+                    loseOneLife()
                     return
                 }
             
@@ -141,7 +164,8 @@ struct GameView: View
                         }
 
                     case .None:
-                        loseOneLife()
+                        // Already handled before
+                        break
                     
                     case .Opposite:
                         if dragDirection == arrow.direction.opposite
@@ -171,9 +195,9 @@ struct GameView: View
     
     private func animateBubble()
     {
-        withAnimation(.linear(duration: 3).repeatForever(autoreverses: true))
+        withAnimation(.linear(duration: 1).repeatForever(autoreverses: true))
         {
-            xRotation = 2.5
+            xRotation = 5.5
         }
         
         generateRandomArrow()

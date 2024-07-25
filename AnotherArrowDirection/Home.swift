@@ -37,7 +37,7 @@ struct Home: View {
                     .bold()
 
                 Spacer(minLength: 0)
-                
+
                 if bestScore > 0 {
                     Text("Best score: \(bestScore)")
                         .font(.system(.title3, design: .rounded))
@@ -45,6 +45,31 @@ struct Home: View {
                 }
 
                 Spacer(minLength: 0)
+
+                Button {
+                    AppManager.shared.currentScreen = .Tutorial
+                    Log.info("Go to tutorial screen")
+                } label: {
+                    HStack {
+                        Spacer()
+
+                        Text("Go to tutorial")
+                            .foregroundColor(.primary)
+                            .textCase(.uppercase)
+                            .font(.caption)
+                            .bold()
+                            .padding(10)
+
+                        Spacer()
+                    }
+                    .background {
+                        Capsule()
+                            .stroke(style: StrokeStyle(lineWidth: 2))
+                    }
+                    .accentColor(.green)
+                    .padding(.horizontal, 25)
+                }
+                .padding()
 
                 Button {
                     if UserDefaults.standard.bool(forKey: "completedTutorial") {
@@ -60,7 +85,7 @@ struct Home: View {
                         Spacer()
 
                         Text("Play")
-                            .foregroundColor(.white)
+                            .foregroundColor(.primary)
                             .textCase(.uppercase)
                             .font(.title3)
                             .bold()
@@ -70,7 +95,6 @@ struct Home: View {
                     }
                     .background {
                         Capsule()
-                            .stroke(style: StrokeStyle(lineWidth: 2))
                     }
                     .accentColor(.green)
                 }
@@ -81,7 +105,11 @@ struct Home: View {
     }
 }
 
-#Preview {
+#Preview("Dark") {
     Home()
         .preferredColorScheme(.dark)
+}
+
+#Preview("Light") {
+    Home()
 }

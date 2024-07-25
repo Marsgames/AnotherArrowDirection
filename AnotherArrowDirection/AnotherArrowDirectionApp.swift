@@ -11,8 +11,7 @@ import SwiftUI
 struct AnotherArrowDirectionApp: App {
     var body: some Scene {
         WindowGroup {
-            switch AppManager.shared.currentScreen
-            {
+            switch AppManager.shared.currentScreen {
             case .Home:
                 Home()
                 
@@ -22,9 +21,11 @@ struct AnotherArrowDirectionApp: App {
             case .Game:
                 GameView()
                 
+            case .EndGame(score: let score):
+                GameOverView(score: score)
+                
             default:
                 EmptyView()
-            
             }
         }
     }

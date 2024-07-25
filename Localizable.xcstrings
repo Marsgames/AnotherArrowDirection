@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    " - " : {
+
+    },
+    "%lld" : {
+
+    },
     "Another" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -21,6 +27,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Meilleur score : %lld"
+          }
+        }
+      }
+    },
+    "Date" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date"
           }
         }
       }
@@ -46,6 +62,16 @@
         }
       }
     },
+    "Go to tutorial" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tutoriel"
+          }
+        }
+      }
+    },
     "gray" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -64,6 +90,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "verte"
+          }
+        }
+      }
+    },
+    "Home" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accueil"
           }
         }
       }
@@ -99,6 +135,16 @@
         }
       }
     },
+    "Play again" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rejouer"
+          }
+        }
+      }
+    },
     "red" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -117,6 +163,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Même direction"
+          }
+        }
+      }
+    },
+    "Score" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Score"
           }
         }
       }
