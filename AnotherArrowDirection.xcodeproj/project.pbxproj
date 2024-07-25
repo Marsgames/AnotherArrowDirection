@@ -3,11 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
+
+/* Begin PBXBuildFile section */
+		0BF5CC682C52413500BD53A2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 0BF5CC672C52413500BD53A2 /* Localizable.xcstrings */; };
+/* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0BF5CC502C52366900BD53A2 /* AnotherArrowDirection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnotherArrowDirection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BF5CC672C52413500BD53A2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -28,6 +33,7 @@
 		0BF5CC472C52366900BD53A2 = {
 			isa = PBXGroup;
 			children = (
+				0BF5CC672C52413500BD53A2 /* Localizable.xcstrings */,
 				0BF5CC522C52366900BD53A2 /* AnotherArrowDirection */,
 				0BF5CC512C52366900BD53A2 /* Products */,
 			);
@@ -88,6 +94,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 0BF5CC472C52366900BD53A2;
 			productRefGroup = 0BF5CC512C52366900BD53A2 /* Products */;
@@ -104,6 +111,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BF5CC682C52413500BD53A2 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +187,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -235,6 +244,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

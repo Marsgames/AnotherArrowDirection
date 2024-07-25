@@ -11,7 +11,18 @@ import SwiftUI
 struct AnotherArrowDirectionApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            switch AppManager.shared.currentScreen
+            {
+            case .Home:
+                Home()
+                
+            case .Tutorial:
+                Tutorial()
+                
+            default:
+                ContentView()
+            
+            }
         }
     }
 }
