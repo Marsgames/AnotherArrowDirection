@@ -20,7 +20,7 @@ struct AnotherArrowDirectionApp: App {
                 Tutorial()
                 
             default:
-                ContentView()
+                EmptyView()
             
             }
         }

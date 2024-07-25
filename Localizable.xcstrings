@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Another Arrow Direction" : {
+
+    },
+    "Best score: %lld" : {
+
+    },
     "do nothing!" : {
       "localizations" : {
         "fr" : {
@@ -32,9 +38,6 @@
           }
         }
       }
-    },
-    "Hello, world!" : {
-
     },
     "If the bubble is %@" : {
       "localizations" : {

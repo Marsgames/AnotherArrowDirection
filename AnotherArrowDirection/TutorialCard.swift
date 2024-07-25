@@ -9,17 +9,17 @@ import SwiftUI
 
 struct TutorialCard: View
 {
+    @Binding var actionValidated: Bool
+
     var color: Color
     var colorName: String
 
     var message: String
-//    var description: String
     var swipeDirection: ESwipeDirection
 
     @State private var valueTranslation: CGSize = .zero
     @State private var isDragging = false
 
-    @State private var actionValidated = false
     @State private var wiggle = false
 
     var body: some View
@@ -130,17 +130,8 @@ struct TutorialCard: View
                     {
                         actionValidated = true
                     }
-                    withAnimation(.easeIn(duration: 0.15).repeatCount(2, autoreverses: true))
-                    {
-                        wiggle = true
-                    }
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3)
-                    {
-                        withAnimation
-                        {
-                            wiggle = false
-                        }
-                    }
+
+                    doWiggle()
 
                 default:
                     break
@@ -156,16 +147,22 @@ struct TutorialCard: View
                 actionValidated = true
             }
 
-            withAnimation(.easeIn(duration: 0.15).repeatCount(2, autoreverses: true))
+            doWiggle()
+        }
+    }
+
+    private func doWiggle()
+    {
+        withAnimation(.easeIn(duration: 0.15).repeatCount(2, autoreverses: true))
+        {
+            wiggle = true
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3)
+        {
+            withAnimation
             {
-                wiggle = true
-            }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3)
-            {
-                withAnimation
-                {
-                    wiggle = false
-                }
+                wiggle = false
             }
         }
     }
@@ -173,21 +170,24 @@ struct TutorialCard: View
 
 #Preview("Dark")
 {
+    @Previewable @State var completed = false
     ZStack
     {
         Background()
 
-        TutorialCard(color: .green, colorName: "green", message: "swipe in the direction of the arrow", swipeDirection: .Same)
+        TutorialCard(actionValidated: $completed, color: .green, colorName: "green", message: "swipe in the direction of the arrow", swipeDirection: .Same)
             .preferredColorScheme(.dark)
     }
 }
 
 #Preview("Light")
 {
+    @Previewable @State var completed = false
+
     ZStack
     {
         Background()
 
-        TutorialCard(color: .green, colorName: "green", message: "swipe in the direction of the arrow", swipeDirection: .Same)
+        TutorialCard(actionValidated: $completed, color: .green, colorName: "green", message: "swipe in the direction of the arrow", swipeDirection: .Same)
     }
 }
