@@ -23,5 +23,5 @@ You can find a video of the gameplay [here](Images/Gameplay.mp4)
 
 ---
 
-⚠️ Project built with Xcode 16 beta 3 & macOS 15 beta 3 ⚠️
+⚠️ Project built with Xcode 16 beta 3 & macOS 15 beta 3 ⚠️ <br />
 It was compiled for iOS 17 so it should work as is, but... beta
