@@ -23,5 +23,12 @@ You can find a video of the gameplay [here](Images/Gameplay.mp4)
 
 ---
 
+Headcrab logo is just a placeholder. <br />
+As long as the name... <br />
+
+I used Bubble sprites from cassala, [on itch.io](https://cassala.itch.io/bubble-sprites)
+
+---
+
 ⚠️ Project built with Xcode 16 beta 3 & macOS 15 beta 3 ⚠️ <br />
 It was compiled for iOS 17 so it should work as is, but... beta
